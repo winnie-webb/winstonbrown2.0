@@ -1,4 +1,5 @@
 import AboutMe from "./components/AboutMe";
+import ContactForm from "./components/ContactMe";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
@@ -13,6 +14,7 @@ export default function Home() {
 
       <Projects></Projects>
       <Skills></Skills>
+      <ContactForm></ContactForm>
     </div>
   );
 }
