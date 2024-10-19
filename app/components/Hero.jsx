@@ -14,9 +14,11 @@ const Hero = () => {
           modern web applications. Explore my portfolio to see my projects and
           skills in action.
         </p>
-        <button className="bg-blue-500 hover:bg-blue-700 transition-all text-white py-3 px-6 rounded-md">
-          View Projects
-        </button>
+        <a href="#projects">
+          <button className="bg-blue-500 hover:bg-blue-700 transition-all text-white py-3 px-6 rounded-md">
+            View Projects
+          </button>
+        </a>
       </div>
 
       {/* Right Section - Geometric Design Elements */}
