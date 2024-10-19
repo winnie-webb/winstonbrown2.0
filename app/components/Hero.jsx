@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -22,6 +23,25 @@ const Hero = () => {
             View Projects
           </button>
         </a>
+        {/* Social Media Icons */}
+        <div className="flex gap-4 mt-6">
+          <a
+            href="https://github.com/winnie-webb"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=" hover:text-blue-400 transition"
+          >
+            <FaGithub size={30} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/winston-brown-b6a085320/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-400 transition"
+          >
+            <FaLinkedin size={30} />
+          </a>
+        </div>
       </div>
 
       {/* Right Section - Geometric Design Elements */}
