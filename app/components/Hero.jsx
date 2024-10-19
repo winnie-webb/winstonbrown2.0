@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Hero = () => {
@@ -26,10 +27,11 @@ const Hero = () => {
 
           {/* Circular Image Element */}
           <div className="relative z-10 w-64 h-64 flex items-center justify-center bg-white rounded-full border-4 border-blue-400 shadow-lg">
-            <img
+            <Image
               src="/suit.jpg"
               alt="Winston Brown"
               className="w-full h-full object-fill rounded-full"
+              fill={true}
             />
           </div>
         </div>
