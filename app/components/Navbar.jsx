@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
 
 const Navbar = () => {
@@ -13,7 +14,17 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-gray-900">Winston Brown</h1>
+            <a href="#hero" className="flex items-center">
+              <Image
+                src="/logo.png"
+                alt="Winston Brown Logo"
+                width={60}
+                height={60}
+              ></Image>
+              <h1 className="text-2xl font-bold text-gray-900">
+                Winston Brown
+              </h1>
+            </a>
           </div>
 
           {/* Desktop Menu */}
@@ -30,6 +41,12 @@ const Navbar = () => {
                 className="text-gray-900 hover:text-blue-500 px-3 py-2 rounded-md text-lg font-medium"
               >
                 About
+              </a>
+              <a
+                href="#skills"
+                className="text-gray-900 hover:text-blue-500 px-3 py-2 rounded-md text-lg font-medium"
+              >
+                Skills
               </a>
               <a
                 href="#contact"

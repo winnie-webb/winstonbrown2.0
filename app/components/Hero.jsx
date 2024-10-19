@@ -3,7 +3,10 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="relative w-full min-h-[80vh] flex items-center justify-between bg-white p-5 lg:p-20 ">
+    <div
+      id="hero"
+      className="relative w-full min-h-[80vh] flex items-center justify-between bg-white p-5 lg:p-20 "
+    >
       {/* Left Section - Introduction */}
       <div className="relative z-10 flex flex-col justify-center items-start text-gray-900 w-full md:w-1/2">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
