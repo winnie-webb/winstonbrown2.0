@@ -1,8 +1,17 @@
+"use client";
 import Image from "next/image";
-import React from "react";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import React, { useState } from "react";
+import {
+  FaGithub,
+  FaExternalLinkAlt,
+  FaWindowClose,
+  FaRegWindowClose,
+} from "react-icons/fa";
+import ReactPlayer from "react-player";
 
 const Projects = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const projects = [
     {
       title: "Brukgram",
@@ -15,7 +24,7 @@ const Projects = () => {
     {
       title: "Jamaica Eternal Tours",
       description:
-        "A booking management system with features for managing bookings, notifications, and real-time updates.",
+        "The website for the premier bus tour agency in J.A. with features for managing bookings, notifications, and real-time updates.",
       gif: "/jett.gif",
       githubLink: "https://github.com/winnie-webb/eternal-tours-official",
       liveLink: "https://jamaicaeternaltours.com",
@@ -26,7 +35,7 @@ const Projects = () => {
         "A sleek, responsive movie streaming platform with real-time video streaming and a modern UI.",
       gif: "/brukflix.gif",
       githubLink: "https://github.com/winnie-webb/brukflix",
-      liveLink: "https://brukflix.com",
+      liveLink: "", // No external link needed for Brukflix
     },
     {
       title: "Collin Tickets",
@@ -37,6 +46,14 @@ const Projects = () => {
       liveLink: "https://collintickets2.koyeb.app/",
     },
   ];
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div id="projects" className="bg-white py-16 px-6 md:px-12">
@@ -78,19 +95,51 @@ const Projects = () => {
                 >
                   <FaGithub className="mr-2" /> GitHub
                 </a>
-                <a
-                  href={project.liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-md"
-                >
-                  <FaExternalLinkAlt className="mr-2" /> Live Demo
-                </a>
+                {/* Brukflix: Open Modal for video */}
+                {project.title === "Brukflix" ? (
+                  <button
+                    onClick={openModal}
+                    className="flex items-center bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-md"
+                  >
+                    <FaExternalLinkAlt className="mr-2" /> Watch Video
+                  </button>
+                ) : (
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-md"
+                  >
+                    <FaExternalLinkAlt className="mr-2" /> Live Demo
+                  </a>
+                )}
               </div>
             </div>
           </div>
         ))}
       </div>
+
+      {/* Modal for Brukflix Video */}
+      {isModalOpen && (
+        <div className="fixed p-4 inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white rounded-lg overflow-hidden shadow-lg relative max-w-4xl w-full p-4">
+            <button
+              className="absolute top-4 right-4 text-gray-700 hover:text-gray-900"
+              onClick={closeModal}
+            >
+              <FaRegWindowClose className="text-3xl"></FaRegWindowClose>
+            </button>
+            <div className="p-8">
+              <ReactPlayer
+                url="/brukflix-video.mp4"
+                controls
+                width="100%"
+                height="100%"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
