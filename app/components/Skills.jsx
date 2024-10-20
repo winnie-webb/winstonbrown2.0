@@ -13,6 +13,8 @@ import {
   SiNextdotjs,
   SiFirebase,
   SiEjs,
+  SiTypescript,
+  SiTailwindcss,
 } from "react-icons/si";
 import { AiOutlineConsoleSql } from "react-icons/ai";
 
@@ -21,6 +23,8 @@ const Skills = () => {
     { name: "JavaScript", icon: SiJavascript },
     { name: "HTML", icon: FaHtml5 },
     { name: "CSS", icon: FaCss3Alt },
+    { name: "Typescript", icon: SiTypescript },
+    { name: "TailwindCss", icon: SiTailwindcss },
     { name: "Node.js", icon: FaNodeJs },
     { name: "Express.js", icon: SiExpress },
     { name: "MongoDB", icon: SiMongodb },
